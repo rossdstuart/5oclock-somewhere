@@ -62,7 +62,10 @@ resource "aws_api_gateway_base_path_mapping" "five_oclock_api_mapping" {
   domain_name = aws_api_gateway_domain_name.five_oclock_api_domain.domain_name
 }
 
-# Route 53 record for API Gateway
+# API Gateway custom domain record
+# Commented out to avoid conflict with five_oclock_website record
+# Both records were trying to manage 5oclock.sweatyross.com
+/*
 resource "aws_route53_record" "five_oclock_api" {
   name    = aws_api_gateway_domain_name.five_oclock_api_domain.domain_name
   type    = "A"
@@ -74,6 +77,7 @@ resource "aws_route53_record" "five_oclock_api" {
     evaluate_target_health = false
   }
 }
+*/
 
 # CloudFront custom domain
 resource "aws_cloudfront_distribution" "s3_distribution_custom_domain" {

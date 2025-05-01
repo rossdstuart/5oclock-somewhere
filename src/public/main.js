@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Get API endpoint from configuration
     const API_ENDPOINT = window.config.apiEndpoint;
 
-    // Fetch a city where it's recently past 5pm and display it
+    // Fetch a city where it's currently 5-6pm and display it
     const fetchFiveOClockCity = async () => {
         try {
             // Show loading state
@@ -52,6 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial fetch
     fetchFiveOClockCity();
 
-    // Add event listener to refresh button
+    // Add event listener to refresh button - find another city where it's 5-6pm
     refreshButton.addEventListener('click', fetchFiveOClockCity);
 });
