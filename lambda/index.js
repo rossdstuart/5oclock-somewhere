@@ -288,7 +288,8 @@ exports.handler = async (event) => {
         const minute = cityTime.minute();
         
         // Check if it's between 5:00 PM and 6:00 PM (17:00 - 18:00)
-        return hour === 17 || (hour === 18 && minute < 1);
+        // Include all times that are in the 5pm hour or exactly 6:00pm (0 mins)
+        return (hour === 17) || (hour === 18 && minute === 0);
       });
     }
     

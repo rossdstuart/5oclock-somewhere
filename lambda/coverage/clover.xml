@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1746128658672" clover="3.2.0">
+  <project timestamp="1746128658672" name="All files">
+    <metrics statements="42" coveredstatements="37" conditionals="19" coveredconditionals="11" methods="3" coveredmethods="3" elements="64" coveredelements="51" complexity="0" loc="42" ncloc="42" packages="1" files="1" classes="1"/>
+    <file name="index.js" path="/Users/ross.stuart/5oclock/lambda/index.js">
+      <metrics statements="42" coveredstatements="37" conditionals="19" coveredconditionals="11" methods="3" coveredmethods="3"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
+      <line num="239" count="1" type="stmt"/>
+      <line num="248" count="1" type="stmt"/>
+      <line num="255" count="1" type="stmt"/>
+      <line num="257" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="258" count="1" type="stmt"/>
+      <line num="265" count="1" type="stmt"/>
+      <line num="267" count="1" type="stmt"/>
+      <line num="270" count="1" type="stmt"/>
+      <line num="271" count="30" type="stmt"/>
+      <line num="272" count="30" type="stmt"/>
+      <line num="275" count="30" type="cond" truecount="1" falsecount="1"/>
+      <line num="276" count="0" type="stmt"/>
+      <line num="278" count="30" type="stmt"/>
+      <line num="282" count="1" type="stmt"/>
+      <line num="284" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="285" count="1" type="stmt"/>
+      <line num="286" count="30" type="stmt"/>
+      <line num="287" count="30" type="stmt"/>
+      <line num="288" count="30" type="stmt"/>
+      <line num="292" count="30" type="cond" truecount="2" falsecount="1"/>
+      <line num="297" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="298" count="1" type="stmt"/>
+      <line num="299" count="1" type="stmt"/>
+      <line num="303" count="1" type="stmt"/>
+      <line num="306" count="1" type="stmt"/>
+      <line num="307" count="1" type="stmt"/>
+      <line num="310" count="1" type="stmt"/>
+      <line num="311" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="312" count="0" type="stmt"/>
+      <line num="313" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="314" count="0" type="stmt"/>
+      <line num="318" count="1" type="stmt"/>
+      <line num="319" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="322" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="325" count="1" type="stmt"/>
+      <line num="334" count="1" type="stmt"/>
+      <line num="340" count="0" type="stmt"/>
+      <line num="341" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>

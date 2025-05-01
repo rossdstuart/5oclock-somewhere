@@ -1,0 +1,1126 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="index.html">All files</a> index.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">88.09% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>37/42</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">57.89% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>11/19</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>3/3</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">88.09% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>37/42</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const moment = require('moment-timezone');
+const { countries } = require('countries-list');
+&nbsp;
+// Major cities with their timezones and countries
+const majorCities = [
+  { name: 'New York', timezone: 'America/New_York', country: 'US' },
+  { name: 'Los Angeles', timezone: 'America/Los_Angeles', country: 'US' },
+  { name: 'London', timezone: 'Europe/London', country: 'GB' },
+  { name: 'Paris', timezone: 'Europe/Paris', country: 'FR' },
+  { name: 'Berlin', timezone: 'Europe/Berlin', country: 'DE' },
+  { name: 'Madrid', timezone: 'Europe/Madrid', country: 'ES' },
+  { name: 'Rome', timezone: 'Europe/Rome', country: 'IT' },
+  { name: 'Moscow', timezone: 'Europe/Moscow', country: 'RU' },
+  { name: 'Dubai', timezone: 'Asia/Dubai', country: 'AE' },
+  { name: 'Mumbai', timezone: 'Asia/Kolkata', country: 'IN' },
+  { name: 'Tokyo', timezone: 'Asia/Tokyo', country: 'JP' },
+  { name: 'Sydney', timezone: 'Australia/Sydney', country: 'AU' },
+  { name: 'Shanghai', timezone: 'Asia/Shanghai', country: 'CN' },
+  { name: 'Hong Kong', timezone: 'Asia/Hong_Kong', country: 'HK' },
+  { name: 'Seoul', timezone: 'Asia/Seoul', country: 'KR' },
+  { name: 'Singapore', timezone: 'Asia/Singapore', country: 'SG' },
+  { name: 'São Paulo', timezone: 'America/Sao_Paulo', country: 'BR' },
+  { name: 'Mexico City', timezone: 'America/Mexico_City', country: 'MX' },
+  { name: 'Cairo', timezone: 'Africa/Cairo', country: 'EG' },
+  { name: 'Cape Town', timezone: 'Africa/Johannesburg', country: 'ZA' },
+  { name: 'Istanbul', timezone: 'Europe/Istanbul', country: 'TR' },
+  { name: 'Bangkok', timezone: 'Asia/Bangkok', country: 'TH' },
+  { name: 'Jakarta', timezone: 'Asia/Jakarta', country: 'ID' },
+  { name: 'Auckland', timezone: 'Pacific/Auckland', country: 'NZ' },
+  { name: 'Toronto', timezone: 'America/Toronto', country: 'CA' },
+  { name: 'Vancouver', timezone: 'America/Vancouver', country: 'CA' },
+  { name: 'Zurich', timezone: 'Europe/Zurich', country: 'CH' },
+  { name: 'Vienna', timezone: 'Europe/Vienna', country: 'AT' },
+  { name: 'Amsterdam', timezone: 'Europe/Amsterdam', country: 'NL' },
+  { name: 'Stockholm', timezone: 'Europe/Stockholm', country: 'SE' },
+];
+&nbsp;
+// Fun facts about countries
+const countryFacts = {
+  'US': [
+    'The United States has 50 states and more than 17,000 islands.',
+    'The US has the world\'s largest economy by nominal GDP.',
+    'Baseball, known as "America\'s pastime", was invented in the US in the 18th century.',
+    'The Grand Canyon in Arizona is one of the Seven Natural Wonders of the World.',
+    'Alaska has more coastline than the rest of the United States combined.'
+  ],
+  'GB': [
+    'The UK consists of four countries: England, Scotland, Wales, and Northern Ireland.',
+    'The London Underground is the oldest underground railway network in the world.',
+    'English is the official language, but over 300 languages are spoken in London.',
+    'The British drink more tea per capita than any other nation except Ireland.',
+    'The Queen doesn\'t need a passport to travel internationally.'
+  ],
+  'FR': [
+    'France is the most visited country in the world with over 89 million tourists annually.',
+    'There are over 1,000 different types of cheese made in France.',
+    'The Louvre Museum in Paris is the largest art museum in the world.',
+    'French was the official language of England for about 300 years.',
+    'The French consume around 11.2 billion glasses of wine each year.'
+  ],
+  'DE': [
+    'Germany has over 1,000 varieties of sausages and 1,500 different types of beer.',
+    'The first printed book was in German, printed by Johannes Gutenberg.',
+    'Germany is home to over 2,100 castles.',
+    'The Berlin Wall fell on November 9, 1989, reuniting East and West Germany.',
+    'German is the most widely spoken language in the European Union.'
+  ],
+  'ES': [
+    'Spain has the third-largest number of UNESCO World Heritage Sites.',
+    'Spanish is the world\'s second-most spoken native language.',
+    'La Tomatina is an annual festival in Spain where people throw tomatoes at each other.',
+    'Spain produces 44% of the world\'s olive oil, more than twice that of Italy.',
+    'The Spanish national anthem has no words.'
+  ],
+  'IT': [
+    'Italy has the most UNESCO World Heritage Sites in the world.',
+    'The Italian flag was inspired by the French flag.',
+    'Pizza was invented in Naples, Italy.',
+    'Vatican City, located in Rome, is the smallest country in the world.',
+    'Italy has more than 1,500 lakes.'
+  ],
+  'RU': [
+    'Russia is the largest country in the world, covering more than one-eighth of the Earth\'s inhabited land area.',
+    'Lake Baikal in Russia is the deepest lake in the world and contains 20% of the world\'s unfrozen freshwater.',
+    'Russia has 11 time zones, more than any other country.',
+    'The Moscow Metro is one of the deepest subway systems in the world.',
+    'Russians celebrate Christmas on January 7th, following the Julian calendar.'
+  ],
+  'AE': [
+    'The UAE has the tallest building in the world, the Burj Khalifa.',
+    'Dubai Police has luxury cars including Bugatti, Ferrari, and Lamborghini.',
+    'The UAE has no rivers but has about 200 natural islands.',
+    'Only about 15% of Dubai\'s population is native Emirati.',
+    'The UAE has the sixth-largest oil reserves in the world.'
+  ],
+  'IN': [
+    'India is the world\'s largest democracy with over 1.3 billion people.',
+    'Chess was invented in India around the 6th century AD.',
+    'India has the world\'s highest cricket ground, located in Chail, Himachal Pradesh.',
+    'India has more than 300,000 mosques and more than 2 million Hindu temples.',
+    'The Indian film industry, Bollywood, produces more films than any other country.'
+  ],
+  'JP': [
+    'Japan consists of 6,852 islands.',
+    'Japan has more than 200 volcanoes and experiences about 1,500 earthquakes every year.',
+    'Sumo is Japan\'s national sport, but baseball is the most popular spectator sport.',
+    'Japan has one of the world\'s lowest crime rates.',
+    'The Japanese have a word for "death from overwork" - Karoshi.'
+  ],
+  'AU': [
+    'Australia is the only country that is also a continent.',
+    'Australia has over 10,000 beaches, you could visit a new beach every day for over 27 years.',
+    'Kangaroos and emus cannot walk backward, which is why they are on the Australian coat of arms.',
+    'Australia has the world\'s longest golf course, measuring more than 850 miles.',
+    '80% of the animals in Australia are unique to the country.'
+  ],
+  'CN': [
+    'China has the world\'s longest wall - the Great Wall of China.',
+    'China is known as the "Middle Kingdom" in Chinese.',
+    'The Chinese invented paper, printing, gunpowder, and the compass.',
+    'China uses 45 billion chopsticks per year.',
+    'Table tennis (ping pong) is China\'s national sport.'
+  ],
+  'HK': [
+    'Hong Kong has more skyscrapers than any other city in the world.',
+    'Hong Kong means "Fragrant Harbor" in Chinese.',
+    'The Hong Kong subway system is the most profitable in the world.',
+    'Hong Kong has the world\'s longest covered outdoor escalator system.',
+    'Over 90% of Hong Kong\'s population uses the Mass Transit Railway (MTR) for daily travel.'
+  ],
+  'KR': [
+    'South Korea has the fastest average internet connection in the world.',
+    'Kimchi is considered the national dish of Korea.',
+    'South Korea is known for its "Bang" culture - PC bang, DVD bang, etc., which are rooms for activities.',
+    'Age is calculated differently in Korea - babies are considered 1 year old when they are born.',
+    'South Korea has one of the highest rates of plastic surgery per capita in the world.'
+  ],
+  'SG': [
+    'Singapore is one of only three city-states in the world.',
+    'It\'s illegal to chew gum in Singapore (with exceptions for therapeutic gum).',
+    'Singapore has one of the most powerful passports in the world.',
+    'The Singapore Botanic Gardens is the only tropical garden to be honored as a UNESCO World Heritage Site.',
+    'Singapore is one of the smallest countries in the world, yet has one of the highest GDPs per capita.'
+  ],
+  'BR': [
+    'Brazil is home to the Amazon, the world\'s largest rainforest and river by volume.',
+    'The Brazilian carnival is the largest in the world, attracting millions of people annually.',
+    'Brazil is the largest producer of coffee in the world.',
+    'More than 70% of Brazil\'s population lives within 100 miles of the coast.',
+    'Brazil is the fifth largest country in the world, both by geographical area and population.'
+  ],
+  'MX': [
+    'Mexico is home to the world\'s smallest volcano, Cuexcomate, which stands at just 43 feet tall.',
+    'Mexico introduced chocolate, chilies, and corn to the world.',
+    'Mexico City is built on a lake and is sinking at a rate of 6 to 8 inches a year.',
+    'The Mexican flag has a picture of an eagle eating a snake, based on an Aztec legend.',
+    'Mexico has 68 official languages.'
+  ],
+  'EG': [
+    'Egypt is home to one of the Seven Wonders of the Ancient World, the Great Pyramid of Giza.',
+    'The ancient Egyptians invented the 365-day calendar.',
+    'The Nile River in Egypt is the longest river in the world.',
+    'Ancient Egyptians believed that cats were sacred animals and killing a cat was punishable by death.',
+    'Egypt has the largest Arabic-speaking population in the world.'
+  ],
+  'ZA': [
+    'South Africa has 11 official languages.',
+    'South Africa is the only country in the world to have hosted the Soccer, Cricket, and Rugby World Cup.',
+    'Table Mountain in Cape Town is one of the oldest mountains in the world.',
+    'South Africa is the largest producer of platinum in the world.',
+    'The world\'s first heart transplant was performed in Cape Town, South Africa, in 1967.'
+  ],
+  'TR': [
+    'Turkey is the only country that spans two continents: Europe and Asia.',
+    'Santa Claus (St. Nicholas) was born in Turkey.',
+    'Turkey is one of the largest tea producers in the world.',
+    'The Turkish city of Istanbul is the only city in the world located on two continents.',
+    'Tulips originated in Turkey and were exported to Holland in the 16th century.'
+  ],
+  'TH': [
+    'Thailand is the only Southeast Asian country that was never colonized by a European power.',
+    'The name Thailand means "Land of the Free".',
+    'Thailand is home to the world\'s largest solid gold Buddha statue.',
+    'It\'s illegal to leave your house without underwear in Thailand.',
+    'Thailand has more than 35,000 temples.'
+  ],
+  'ID': [
+    'Indonesia is the world\'s largest archipelago, consisting of more than 17,000 islands.',
+    'Indonesia has the world\'s largest lizard, the Komodo dragon.',
+    'Borobudur in Indonesia is the world\'s largest Buddhist temple.',
+    'Indonesia has the third-largest area of rainforest in the world, after Brazil and the Democratic Republic of Congo.',
+    'Indonesia is located on the "Ring of Fire", an area with a high degree of tectonic activity.'
+  ],
+  'NZ': [
+    'New Zealand was the first country to give women the right to vote in 1893.',
+    'There are more sheep than people in New Zealand, approximately 6 sheep per person.',
+    'New Zealand is home to the world\'s smallest dolphin species, the Hector\'s dolphin.',
+    'The Lord of the Rings trilogy was filmed in New Zealand.',
+    'New Zealand has no land snakes.'
+  ],
+  'CA': [
+    'Canada has more lakes than the rest of the world combined.',
+    'Canada is the second-largest country in the world after Russia.',
+    'Canada has the longest coastline in the world.',
+    'The border between Canada and the US is the longest international border in the world.',
+    'Basketball was invented by a Canadian, Dr. James Naismith.'
+  ],
+  'CH': [
+    'Switzerland has four official languages: German, French, Italian, and Romansh.',
+    'Switzerland is famous for its neutrality and hasn\'t been involved in a war since 1815.',
+    'Switzerland has the highest chocolate consumption per capita in the world.',
+    'The Swiss take more train trips than any other country in the world.',
+    'The Large Hadron Collider, the world\'s largest and most powerful particle accelerator, is located in Geneva, Switzerland.'
+  ],
+  'AT': [
+    'Austria is home to the oldest zoo in the world, Tiergarten Schönbrunn.',
+    'The Austrian flag is one of the oldest national flags in the world.',
+    'Austria has been the birthplace of many famous composers, including Mozart, Schubert, and Strauss.',
+    'The world\'s oldest restaurant still in operation is in Salzburg, Austria, dating back to 803 AD.',
+    'The sewing machine was invented in Austria by Josef Madersperger.'
+  ],
+  'NL': [
+    'The Netherlands has the highest concentration of museums in the world.',
+    'Dutch people are the tallest in the world, with an average height of 184 cm for men and 170 cm for women.',
+    'The Netherlands is one of the most densely populated countries in Europe.',
+    'Approximately 20% of the Netherlands is below sea level.',
+    'The famous Dutch tulips actually originated from Turkey.'
+  ],
+  'SE': [
+    'Sweden is one of the most cashless societies, with more than 95% of all transactions being digital.',
+    'Sweden has the most islands of any country in the world, approximately 267,570.',
+    'The Nobel Prize ceremony is held annually in Stockholm, Sweden.',
+    'The Swedish passport is one of the most powerful in the world.',
+    'Sweden was the first country in the world to introduce a carbon tax in 1991.'
+  ]
+};
+&nbsp;
+// Set default facts for countries not in our database
+const defaultFacts = [
+  'This is a beautiful country with a rich history and culture.',
+  'The people here are known for their hospitality and friendliness.',
+  'This country has unique cuisine that reflects its history and geographical location.',
+  'The landscape ranges from mountains to coastlines, offering diverse natural beauty.',
+  'There are many traditions and festivals celebrated throughout the year.'
+];
+&nbsp;
+// CORS headers for API Gateway
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET,OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Content-Type': 'application/json'
+};
+&nbsp;
+exports.handler = async (event) =&gt; {
+  // Handle OPTIONS requests for CORS
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({ message: 'CORS enabled' })
+    };
+  }
+&nbsp;
+  try {
+    // Get current time
+    const now = moment();
+    
+    // Find cities where it's between 5:00 PM and 6:00 PM
+    const fiveOClockCities = majorCities.filter(city =&gt; {
+      const cityTime = moment().tz(city.timezone);
+      const hour = cityTime.hour();
+      
+      // Check if it's exactly 5 PM (17:00)
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (hour === 17) {
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+      }
+      return false;
+    });
+&nbsp;
+    // If no cities are having 5 PM right now, select cities where it's recently past 5
+    let candidateCities = fiveOClockCities;
+    
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (candidateCities.length === 0) {
+      candidateCities = majorCities.filter(city =&gt; {
+        const cityTime = moment().tz(city.timezone);
+        const hour = cityTime.hour();
+        const minute = cityTime.minute();
+        
+        // Check if it's between 5:00 PM and 6:00 PM (17:00 - 18:00)
+        // Include all times that are in the 5pm hour or exactly 6:00pm (0 mins)
+        return (hour === 17) || (hour === 18 &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >minute === 0)</span>;
+      });
+    }
+    
+    // If still no cities, pick a random one (this shouldn't happen often)
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (candidateCities.length === 0) {
+      const randomCity = majorCities[Math.floor(Math.random() * majorCities.length)];
+      candidateCities = [randomCity];
+    }
+    
+    // Select a random city from candidates
+    const randomCity = candidateCities[Math.floor(Math.random() * candidateCities.length)];
+    
+    // Get city time
+    const cityTime = moment().tz(randomCity.timezone);
+    const formattedTime = cityTime.format('h:mm A');
+    
+    // Calculate how many minutes past 5 PM
+    let minutesPast5pm = 0;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (cityTime.hour() === 17) {
+<span class="cstat-no" title="statement not covered" >      minutesPast5pm = cityTime.minute();</span>
+    } else <span class="missing-if-branch" title="if path not taken" >I</span>if (cityTime.hour() === 18) {
+<span class="cstat-no" title="statement not covered" >      minutesPast5pm = 60 + cityTime.minute();</span>
+    }
+    
+    // Get country name and facts
+    const countryCode = randomCity.country;
+    const countryName = countries[countryCode] ? countries[countryCode].name : <span class="branch-1 cbranch-no" title="branch not covered" >countryCode;</span>
+    
+    // Get facts for the country (use default if not in our database)
+    const facts = countryFacts[countryCode] || <span class="branch-1 cbranch-no" title="branch not covered" >defaultFacts;</span>
+    
+    // Return the data
+    const responseData = {
+      city: randomCity.name,
+      country: countryName,
+      localTime: formattedTime,
+      minutesPast5pm: minutesPast5pm,
+      countryFacts: facts,
+      timezone: randomCity.timezone
+    };
+&nbsp;
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify(responseData)
+    };
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    console.error('Error:', error);</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      statusCode: 500,
+      headers,
+      body: JSON.stringify({ error: 'Internal server error' })
+    };
+  }
+};
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2025-05-01T19:44:18.666Z
+            </div>
+        <script src="prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="sorter.js"></script>
+        <script src="block-navigation.js"></script>
+    </body>
+</html>
+    

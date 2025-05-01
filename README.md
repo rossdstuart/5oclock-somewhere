@@ -92,6 +92,28 @@ npm start
 
 The site will be available at http://localhost:3000
 
+## Testing
+
+The application includes unit tests for the Lambda function to ensure it correctly identifies cities where it's between 5:00 PM and 6:00 PM.
+
+```bash
+# Run tests
+cd lambda && npm test
+```
+
+### Test Coverage
+
+Current test coverage:
+
+```
+----------|---------|----------|---------|---------|---------------------
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s   
+----------|---------|----------|---------|---------|---------------------
+All files |   88.09 |    57.89 |     100 |   88.09 |                     
+ index.js |   88.09 |    57.89 |     100 |   88.09 | 276,312,314,340-341 
+----------|---------|----------|---------|---------|---------------------
+```
+
 ## Deployment
 
 The website is configured to be deployed to AWS S3 with CloudFront distribution and a Lambda backend using Terraform.
@@ -118,6 +140,17 @@ After deployment, you need to update the configuration with the API endpoint:
    ```bash
    aws s3 sync src/public/ s3://your-bucket-name/ --delete
    ```
+
+### Invalidating CloudFront Cache
+
+After updating your Lambda code or S3 content, you need to invalidate the CloudFront cache to ensure your changes are immediately available to users:
+
+```bash
+# Run the cache invalidation script
+./scripts/invalidate-cache.sh
+```
+
+This script automatically finds your CloudFront distribution and creates an invalidation for all paths, forcing CloudFront to fetch the updated Lambda code and S3 content on the next request.
 
 ## Project Structure
 
