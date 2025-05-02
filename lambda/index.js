@@ -632,6 +632,47 @@ const countryFacts = {
   ]
 };
 
+// National drinks for countries that have one
+const countryDrinks = {
+  'US': 'Bourbon Whiskey',
+  'GB': 'Tea (though some would say ale or gin)',
+  'FR': 'Wine (specifically Champagne)',
+  'DE': 'Beer',
+  'IT': 'Wine (many varieties like Chianti, Barolo)',
+  'RU': 'Vodka',
+  'JP': 'Sake',
+  'MX': 'Tequila',
+  'IE': 'Guinness',
+  'JM': 'Rum',
+  'CU': 'Rum (specifically Havana Club)',
+  'KR': 'Soju',
+  'CN': 'Baijiu',
+  'TR': 'Raki',
+  'GR': 'Ouzo',
+  'PL': 'Vodka',
+  'PE': 'Pisco',
+  'CL': 'Pisco Sour',
+  'BR': 'Caipirinha',
+  'SE': 'Akvavit',
+  'FI': 'Koskenkorva Vodka',
+  'PT': 'Port Wine',
+  'ES': 'Sangria',
+  'AR': 'Mate (or Fernet)',
+  'PR': 'Piña Colada',
+  'TH': 'Mekhong (Thai whiskey)',
+  'SG': 'Singapore Sling',
+  'IN': 'Toddy (or Chai)',
+  'IS': 'Brennivín',
+  'NP': 'Raksi',
+  'LK': 'Arrack',
+  'CH': 'Absinthe',
+  'NL': 'Jenever (Gin)',
+  'KZ': 'Kumis',
+  'VN': 'Rượu đế (Rice wine)',
+  'MA': 'Mint Tea',
+  'TN': 'Boukha (Fig liquor)'
+};
+
 // Set default facts for countries not in our database
 const defaultFacts = [
   'This is a beautiful country with a rich history and culture.',
@@ -674,14 +715,16 @@ exports.handler = async (event) => {
       return (hour === 17) || (hour === 18 && minute === 0);
     });
     
-    // If no cities are in the 5-6 PM window, select a random city as a fallback
-    if (candidateCities.length === 0) {
-      const randomCity = majorCities[Math.floor(Math.random() * majorCities.length)];
-      candidateCities = [randomCity];
-    }
+    // Select a city from those in the 5-6pm window
+    let randomCity;
     
-    // Select a random city from candidates
-    const randomCity = candidateCities[Math.floor(Math.random() * candidateCities.length)];
+    if (candidateCities.length > 0) {
+      // We have cities in the 5-6pm window, randomly select one
+      randomCity = candidateCities[Math.floor(Math.random() * candidateCities.length)];
+    } else {
+      // No cities are in the 5-6 PM window, select a random city as a fallback
+      randomCity = majorCities[Math.floor(Math.random() * majorCities.length)];
+    }
     
     // Get city time
     const cityTime = moment().tz(randomCity.timezone);
@@ -702,6 +745,9 @@ exports.handler = async (event) => {
     // Get facts for the country (use default if not in our database)
     const facts = countryFacts[countryCode] || defaultFacts;
     
+    // Get national drink if it exists
+    const nationalDrink = countryDrinks[countryCode] || null;
+    
     // Return the data
     const responseData = {
       city: randomCity.name,
@@ -709,7 +755,8 @@ exports.handler = async (event) => {
       localTime: formattedTime,
       minutesPast5pm: minutesPast5pm,
       countryFacts: facts,
-      timezone: randomCity.timezone
+      timezone: randomCity.timezone,
+      nationalDrink: nationalDrink
     };
 
     return {
