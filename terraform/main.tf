@@ -4,7 +4,7 @@ provider "aws" {
 
 # S3 bucket for website hosting
 resource "aws_s3_bucket" "website_bucket" {
-  bucket = var.bucket_name
+  bucket = "${var.bucket_name}${local.environment_suffix}"
 
   tags = {
     Name        = "5OClock-Website-Bucket"

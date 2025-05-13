@@ -1,16 +1,15 @@
 # ACM Certificate for custom domain
 resource "aws_acm_certificate" "five_oclock_certificate" {
-  domain_name       = "${var.subdomain}.${var.domain_name}"
+  domain_name       = local.fully_qualified_subdomain
   validation_method = "DNS"
 
   lifecycle {
     create_before_destroy = true
   }
 
-  tags = {
-    Name        = "5OClock-Certificate"
-    Environment = var.environment
-  }
+  tags = merge(local.common_tags, {
+    Name = "5OClock-Certificate${local.env_suffix}"
+  })
 }
 
 # Route 53 record for certificate validation
@@ -43,7 +42,7 @@ data "aws_route53_zone" "domain_zone" {
 
 # API Gateway Custom Domain
 resource "aws_api_gateway_domain_name" "five_oclock_api_domain" {
-  domain_name              = "${var.subdomain}.${var.domain_name}"
+  domain_name              = local.fully_qualified_subdomain
   regional_certificate_arn = aws_acm_certificate.five_oclock_certificate.arn
 
   endpoint_configuration {
@@ -85,11 +84,11 @@ resource "aws_cloudfront_distribution" "s3_distribution_custom_domain" {
   is_ipv6_enabled     = true
   default_root_object = "index.html"
   price_class         = "PriceClass_100"
-  aliases             = ["${var.subdomain}.${var.domain_name}"]
+  aliases             = [local.fully_qualified_subdomain]
 
   origin {
     domain_name = aws_s3_bucket.website_bucket.bucket_regional_domain_name
-    origin_id   = "S3-${var.bucket_name}"
+    origin_id   = "S3-${local.bucket_name}"
 
     s3_origin_config {
       origin_access_identity = aws_cloudfront_origin_access_identity.oai.cloudfront_access_identity_path
@@ -114,7 +113,7 @@ resource "aws_cloudfront_distribution" "s3_distribution_custom_domain" {
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = "S3-${var.bucket_name}"
+    target_origin_id = "S3-${local.bucket_name}"
 
     forwarded_values {
       query_string = false
@@ -168,7 +167,7 @@ resource "aws_cloudfront_distribution" "s3_distribution_custom_domain" {
 
 # Route 53 record for CloudFront
 resource "aws_route53_record" "five_oclock_website" {
-  name    = "${var.subdomain}.${var.domain_name}"
+  name    = local.fully_qualified_subdomain
   type    = "A"
   zone_id = data.aws_route53_zone.domain_zone.zone_id
 
@@ -181,5 +180,5 @@ resource "aws_route53_record" "five_oclock_website" {
 
 # Output custom domain URL
 output "website_url" {
-  value = "https://${var.subdomain}.${var.domain_name}"
+  value = "https://${local.fully_qualified_subdomain}"
 }

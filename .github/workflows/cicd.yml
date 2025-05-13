@@ -1,0 +1,141 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+        - dev
+        - prod
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+
+  deploy-dev:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'dev')
+    environment: development
+    env:
+      TF_VAR_environment: dev
+      TF_VAR_enable_dev_environment: true
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
+          aws-region: us-east-1
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build frontend
+        run: npm run build
+      - name: Zip Lambda function
+        run: |
+          cd lambda
+          npm ci --production
+          zip -r function.zip .
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
+      - name: Terraform Init
+        working-directory: ./terraform
+        run: terraform init
+      - name: Select Dev Workspace
+        working-directory: ./terraform
+        run: terraform workspace select dev || terraform workspace new dev
+      - name: Terraform Plan
+        id: plan
+        working-directory: ./terraform
+        run: |
+          terraform plan \
+            -var="environment=$TF_VAR_environment" \
+            -var="enable_dev_environment=$TF_VAR_enable_dev_environment" \
+            -out=tfplan
+      - name: Terraform Apply
+        working-directory: ./terraform
+        run: terraform apply -auto-approve tfplan
+      - name: Display Dev Environment URL
+        run: |
+          echo "Dev environment deployed successfully!"
+          echo "Website URL: https://dev-5oclock.sweatyross.com"
+          echo "API URL: https://dev-5oclock.sweatyross.com/api/five-oclock"
+
+  deploy-prod:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'prod')
+    environment: production
+    env:
+      TF_VAR_environment: prod
+      TF_VAR_enable_dev_environment: false
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_PROD }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_PROD }}
+          aws-region: us-east-1
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build frontend
+        run: npm run build
+      - name: Zip Lambda function
+        run: |
+          cd lambda
+          npm ci --production
+          zip -r function.zip .
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
+      - name: Terraform Init
+        working-directory: ./terraform
+        run: terraform init
+      - name: Select Prod Workspace
+        working-directory: ./terraform
+        run: terraform workspace select prod || terraform workspace new prod
+      - name: Terraform Plan
+        id: plan
+        working-directory: ./terraform
+        run: |
+          terraform plan \
+            -var="environment=$TF_VAR_environment" \
+            -var="enable_dev_environment=$TF_VAR_enable_dev_environment" \
+            -out=tfplan
+      - name: Terraform Apply
+        working-directory: ./terraform
+        run: terraform apply -auto-approve tfplan
+      - name: Display Prod Environment URL
+        run: |
+          echo "Production environment deployed successfully!"
+          echo "Website URL: https://5oclock.sweatyross.com"
+          echo "API URL: https://5oclock.sweatyross.com/api/five-oclock"

@@ -4,22 +4,10 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "bucket_name" {
-  description = "The name of the S3 bucket for website hosting"
-  type        = string
-  default     = "5oclock-somewhere-website-unique"
-}
-
 variable "environment" {
   description = "Environment name (e.g., dev, staging, prod)"
   type        = string
   default     = "dev"
-}
-
-variable "lambda_zip_path" {
-  description = "Path to the zipped Lambda function code"
-  type        = string
-  default     = "../lambda/function.zip"
 }
 
 variable "domain_name" {
@@ -28,8 +16,41 @@ variable "domain_name" {
   default     = "sweatyross.com"
 }
 
-variable "subdomain" {
-  description = "Subdomain for the 5 O'Clock website"
+variable "base_subdomain" {
+  description = "Base subdomain for the 5 O'Clock website"
   type        = string
   default     = "5oclock"
+}
+
+variable "enable_dev_environment" {
+  description = "Whether to enable the dev environment features"
+  type        = bool
+  default     = false
+}
+
+variable "lambda_zip_path" {
+  description = "Path to the zipped Lambda function code"
+  type        = string
+  default     = "../lambda/function.zip"
+}
+
+# Environment-specific variables and computed values
+locals {
+  # Environment specific naming
+  env_suffix                = var.environment == "prod" ? "" : "-${var.environment}"
+  subdomain                 = var.environment == "prod" ? var.base_subdomain : "dev-${var.base_subdomain}"
+  fully_qualified_subdomain = "${local.subdomain}.${var.domain_name}"
+  
+  # Resource naming with environment suffixes to avoid conflicts
+  bucket_name               = "5oclock-somewhere-website${local.env_suffix}"
+  api_name                  = "5oclock-api${local.env_suffix}"
+  lambda_function_name      = "5oclock-lambda${local.env_suffix}"
+  distribution_name         = "5oclock-distribution${local.env_suffix}"
+  
+  # Tags to apply to all resources
+  common_tags = {
+    Environment = var.environment
+    Project     = "5oclock"
+    ManagedBy   = "Terraform"
+  }
 }

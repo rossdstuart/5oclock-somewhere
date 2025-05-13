@@ -1,6 +1,6 @@
 # Lambda function
 resource "aws_lambda_function" "five_oclock_lambda" {
-  function_name    = "five-oclock-api"
+  function_name    = local.lambda_function_name
   filename         = var.lambda_zip_path
   source_code_hash = filebase64sha256(var.lambda_zip_path)
   handler          = "index.handler"
@@ -15,6 +15,8 @@ resource "aws_lambda_function" "five_oclock_lambda" {
     }
   }
 
+  tags = local.common_tags
+
   depends_on = [
     aws_iam_role_policy_attachment.lambda_policy_attachment
   ]
@@ -22,7 +24,7 @@ resource "aws_lambda_function" "five_oclock_lambda" {
 
 # IAM role for Lambda
 resource "aws_iam_role" "lambda_role" {
-  name = "five-oclock-lambda-role"
+  name = "five-oclock-lambda-role${local.env_suffix}"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -36,12 +38,14 @@ resource "aws_iam_role" "lambda_role" {
       }
     ]
   })
+
+  tags = local.common_tags
 }
 
 # IAM policy for Lambda
 resource "aws_iam_policy" "lambda_policy" {
-  name = "five-oclock-lambda-policy"
-  path = "/"
+  name        = "five-oclock-lambda-policy${local.env_suffix}"
+  path        = "/"
 
   policy = jsonencode({
     Version = "2012-10-17"
@@ -57,6 +61,8 @@ resource "aws_iam_policy" "lambda_policy" {
       }
     ]
   })
+
+  tags = local.common_tags
 }
 
 # Attach the policy to the role
@@ -67,12 +73,14 @@ resource "aws_iam_role_policy_attachment" "lambda_policy_attachment" {
 
 # API Gateway REST API
 resource "aws_api_gateway_rest_api" "five_oclock_api" {
-  name        = "five-oclock-api"
-  description = "API for 5 O'Clock Somewhere"
+  name        = local.api_name
+  description = "API for 5 O'Clock Somewhere - ${var.environment}"
 
   endpoint_configuration {
     types = ["REGIONAL"]
   }
+
+  tags = local.common_tags
 }
 
 # API Gateway resource
